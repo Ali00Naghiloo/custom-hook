@@ -2,6 +2,10 @@ import "./App.css";
 import useFormController from "./hooks/useFormController";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from "@mui/material/IconButton";
+// import Visibility from "@mui/icons-material/Visibility";
+// import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 function App() {
   const { formik } = useFormController();
@@ -16,10 +20,14 @@ function App() {
         className="App"
         onSubmit={formik.handleSubmit}
       >
+        {/* My Header Text */}
+        <h3>Wellcome!</h3>
+        <h6>Register Your Acount</h6>
+
         {/* My Name Input */}
         <TextField
           type="text"
-          label="Your Name"
+          label="User Name"
           {...formik.getFieldProps("name")}
           helperText={
             formik.touched.name && formik.errors.name ? (
@@ -68,7 +76,7 @@ function App() {
         />
 
         {/* My RepeatPassword Input */}
-        <TextField
+        {/* <TextField
           label="Repeat Password"
           type="password"
           {...formik.getFieldProps("repeatPassword")}
@@ -82,7 +90,7 @@ function App() {
               <div>{formik.errors.repeatPassword}</div>
             ) : null
           }
-        />
+        /> */}
 
         <TextField value="submit" type="submit" />
       </Box>

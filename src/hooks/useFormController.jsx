@@ -9,6 +9,7 @@ const useFormController = () => {
       email: "",
       password: "",
       repeatPassword: "",
+      showPassword: false,
     },
 
     onSubmit: (values) => {},
