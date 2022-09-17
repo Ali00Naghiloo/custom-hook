@@ -16,6 +16,7 @@ function App() {
         className="App"
         onSubmit={formik.handleSubmit}
       >
+        {/* My Name Input */}
         <TextField
           type="text"
           label="Your Name"
@@ -25,39 +26,60 @@ function App() {
               <div>{formik.errors.name}</div>
             ) : null
           }
-        />
-
-        <TextField
-          type="number"
-          label="Your Number"
-          {...formik.getFieldProps("number")}
-          helperText={
-            formik.touched.number && formik.errors.number ? (
-              <div>{formik.errors.number}</div>
+          error={
+            formik.touched.name && formik.errors.name ? (
+              <div>{formik.errors.name}</div>
             ) : null
           }
         />
 
+        {/* My Email Input */}
         <TextField
           label="Your Email"
           type="email"
-          variant="filled"
           {...formik.getFieldProps("email")}
           helperText={
             formik.touched.email && formik.errors.email ? (
               <div>{formik.errors.email}</div>
             ) : null
           }
+          error={
+            formik.touched.email && formik.errors.email ? (
+              <div>{formik.errors.email}</div>
+            ) : null
+          }
         />
 
+        {/* My Password Input */}
         <TextField
           label="Password"
           type="password"
-          variant="standard"
           {...formik.getFieldProps("password")}
           helperText={
             formik.touched.password && formik.errors.password ? (
               <div>{formik.errors.password}</div>
+            ) : null
+          }
+          error={
+            formik.touched.password && formik.errors.password ? (
+              <div>{formik.errors.password}</div>
+            ) : null
+          }
+        />
+
+        {/* My RepeatPassword Input */}
+        <TextField
+          label="Repeat Password"
+          type="password"
+          {...formik.getFieldProps("repeatPassword")}
+          helperText={
+            formik.touched.repeatPassword && formik.errors.repeatPassword ? (
+              <div>{formik.errors.repeatPassword}</div>
+            ) : null
+          }
+          error={
+            formik.touched.repeatPassword && formik.errors.repeatPassword ? (
+              <div>{formik.errors.repeatPassword}</div>
             ) : null
           }
         />

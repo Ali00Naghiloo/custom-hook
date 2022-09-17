@@ -1,6 +1,5 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Snackbar, Alert } from "@mui/material";
 
 const useFormController = () => {
   const formik = useFormik({
@@ -9,6 +8,7 @@ const useFormController = () => {
       number: "",
       email: "",
       password: "",
+      repeatPassword: "",
     },
 
     onSubmit: (values) => {},
@@ -23,6 +23,9 @@ const useFormController = () => {
         .required("Reqired Field"),
       email: Yup.string("please enter string").required("Reqired Field"),
       password: Yup.string("please enter string")
+        .min(6, "must be at least 6 characters")
+        .required("Reqired Field"),
+      repeatPassword: Yup.string("please enter string")
         .min(6, "must be at least 6 characters")
         .required("Reqired Field"),
     }),
