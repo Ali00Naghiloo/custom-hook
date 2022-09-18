@@ -12,8 +12,6 @@ const useFormController = () => {
       showPassword: false,
     },
 
-    onSubmit: (values) => {},
-
     validationSchema: Yup.object({
       name: Yup.string("please enter string")
         .max(15, "cant be more than 15 characters")
@@ -30,6 +28,10 @@ const useFormController = () => {
         .min(6, "must be at least 6 characters")
         .required("Reqired Field"),
     }),
+
+    onSubmit: (values) => {
+      console.log(values);
+    },
   });
 
   const exports = {
